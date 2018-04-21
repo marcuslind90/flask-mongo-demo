@@ -3,5 +3,6 @@ from datetime import datetime
 
 
 class Category(Document):
-    title = StringField(required=True, max_length=200)
+    name = StringField(required=True, max_length=200)
+    slug = StringField(required=True, unique=True)
     created_at = DateTimeField(default=datetime.utcnow)
