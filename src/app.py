@@ -1,6 +1,7 @@
 from flask import Flask
 from flask_mongoengine import MongoEngine
-from apps.category.controllers import CategoryView
+from apps.category.views import CategoryView
+from apps.api.utils import register_api
 
 
 app = Flask(__name__)
@@ -15,4 +16,4 @@ def hello():
     return "Hello World!"
 
 
-app.add_url_rule('/categories', view_func=CategoryView.as_view('categories'))
+register_api(app, CategoryView, 'categories', '/categories/', pk_type='string')
