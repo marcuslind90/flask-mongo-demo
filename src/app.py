@@ -16,4 +16,4 @@ def hello():
     return "Hello World!"
 
 
-register_api(app, CategoryView, 'categories', '/categories/', pk_type='string')
+register_api(app, CategoryView, 'categories', '/categories/')

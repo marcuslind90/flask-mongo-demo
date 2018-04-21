@@ -1,4 +1,4 @@
-def register_api(app, view, endpoint, url, pk='id', pk_type='int'):
+def register_api(app, view, endpoint, url, pk='id', pk_type='string'):
     view_func = view.as_view(endpoint)
     app.add_url_rule(url, defaults={pk: None},
                      view_func=view_func, methods=['GET', ])
