@@ -27,8 +27,7 @@ class ApiView(MethodView):
         return jsonify(instance)
 
     def delete(self, id):
-        instance = self.model.objects(**{self.id_field: id}).first()
-        instance.delete()
+        self.model.objects(**{self.id_field: id}).delete()
 
         response = jsonify()
         response.status_code = 204
